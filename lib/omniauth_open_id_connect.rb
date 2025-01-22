@@ -65,9 +65,6 @@ module ::OmniAuth
         options.use_userinfo = false if userinfo_endpoint.nil? || userinfo_endpoint.empty?
 
         if discovery_document["token_endpoint_auth_methods_supported"] &&
-             !discovery_document["token_endpoint_auth_methods_supported"].include?(
-               "client_secret_basic",
-             ) &&
              discovery_document["token_endpoint_auth_methods_supported"].include?(
                "client_secret_post",
              )
